@@ -25,12 +25,12 @@ for x in range(len(geojson_data["features"])):
         states[uf].append(dict(geojson_data["features"][x]));
         
 for uf in states.keys():
-    f = open("estados/" + uf + ".geojason", 'w', encoding='utf-8')
+    f = open("estados/" + uf + ".geojson", 'w', encoding='utf-8')
     data = {"type": "FeatureCollection",
             "name": "municipios "+ uf,
             "features": states[uf]}
     json.dump(data, f, indent=4)
-    print(uf + ".geojason writen")
+    print(uf + ".geojson writen")
     #for city in states[uf]:
     #    f.write(city + ',')
     #f.seek(-1, os.SEEK_CUR)
